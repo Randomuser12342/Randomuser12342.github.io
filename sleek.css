@@ -10,7 +10,7 @@ body {
     color: white;
     text-align: center;
 }
-html, body, body * {
+head {
     cursor: url('mouse.svg'), auto;
     height: 100%;
 }
