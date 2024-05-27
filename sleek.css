@@ -5,9 +5,11 @@ body {
     font-style: normal;
     background-color: black;
     color: white;
-    cursor: url('mouse.svg'), auto;
 }
 .navbar {
     color: white;
     text-align: center;
+}
+html {
+    cursor: url('mouse.svg'), auto;
 }
