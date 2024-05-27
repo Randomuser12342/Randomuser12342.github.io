@@ -7,6 +7,6 @@ body {
     color: white;
 }
 .navbar {
-    text-decoration: none;
-    text-align: center;
+    color: inherit;
+    text-decoration: inherit;
 }
