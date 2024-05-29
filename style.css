@@ -1,14 +1,15 @@
-/* styles.css */
+/* style.css */
 
 /* Set font to Lexend, background to black, and text color to white */
 body {
     font-family: 'Lexend', sans-serif;
     background-color: black;
     color: white; /* Text color set to white for better visibility */
+    cursor: url('mouse.svg'), auto; /* Set custom cursor */
 }
 
 /* Remove blue color and underline from links in the class "no-decor" */
-.navbar a {
+.no-decor a {
     text-decoration: none;
     color: inherit;
 }
