@@ -9,22 +9,19 @@
 </head>
 <body>
     <script>
-        function convert() {
-            let checkbox = document.getElementById('IncludeSpaces'); // Corrected ID
-
-            if (checkbox.checked) {
+        // Ensure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+            function convert() {
+                let checkbox = document.getElementById('IncludeSpaces');
                 let text = document.getElementById('MyText').value;
-                let length = text.replace(/ /g, '').length; // Global replace
-                document.getElementById('Result').innerHTML = '<strong>' + length + '</strong>';
-            } else {
-                let text = document.getElementById('MyText').value;
-                let length = text.length;
+                let length = checkbox.checked ? text.replace(/ /g, '').length : text.length;
                 document.getElementById('Result').innerHTML = '<strong>' + length + '</strong>';
             }
-        }
-        // Corrected event listener
-        document.getElementById('ConvertButton').addEventListener('click', convert);
+            // Attach the event listener to the button inside the DOMContentLoaded event
+            document.getElementById('ConvertButton').addEventListener('click', convert);
+        });
     </script>
+    
     <div class="navbar">
         <a href="randomuser12342.github.io">Home</a>
         <a href="randomuser12342.github.io/projects">Projects</a>
