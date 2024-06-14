@@ -10,12 +10,11 @@
 <body>
     <script>
         function convert() {
-            // Assume there is a checkbox with the id 'myCheckbox'
-            let checkbox = document.getElementById('myCheckbox');
+            let checkbox = document.getElementById('IncludeSpaces'); // Corrected ID
 
             if (checkbox.checked) {
                 let text = document.getElementById('MyText').value;
-                let length = text.replace(' ', '').length;
+                let length = text.replace(/ /g, '').length; // Global replace
                 document.getElementById('Result').innerHTML = '<strong>' + length + '</strong>';
             } else {
                 let text = document.getElementById('MyText').value;
@@ -33,7 +32,9 @@
     <h1>LengthOText</h1>
     <p>Find the length of text instantly!</p>
     <input type="text" id="MyText">
-    <input type="button" id="ConvertButton" value="Convert" onclick="convert()">
-    <input type="checkbox" id="IncludeSpaces" value="Count Spaces As Characters">
+    <input type="button" id="ConvertButton" value="Convert">
+    <label>
+        <input type="checkbox" id="IncludeSpaces"> Count Spaces As Characters
+    </label>
     <p id="Result">You have not converted yet!</p>
 </body>
