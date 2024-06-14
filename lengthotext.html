@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <title>My Projects</title>
     <link rel="icon" type="image/x-icon" href="favicon.svg">
@@ -8,15 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        function convert() {
-            let text = document.getElementById('MyText').value;
-            let length = text.length;
-            document.getElementById('Result').innerHTML = '<strong>' + length + '</strong>';
-        }
-        // Corrected event listener
-        document.getElementById('ConvertButton').addEventListener('click', convert);
-    </script>
     <div class="navbar">
         <a href="randomuser12342.github.io">Home</a>
         <a href="randomuser12342.github.io/projects">Projects</a>
@@ -24,6 +16,20 @@
     <h1>LengthOText</h1>
     <p>Find the length of text instantly!</p>
     <input type="text" id="MyText">
-    <input type="button" id="ConvertButton" value="Convert" onclick="convert()">
+    <input type="button" id="ConvertButton" value="Convert">
     <p id="Result">You have not converted yet!</p>
+
+    <script>
+        // Ensure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+            function convert() {
+                let text = document.getElementById('MyText').value;
+                let length = text.length;
+                document.getElementById('Result').innerHTML = '<strong>' + length + '</strong>';
+            }
+            // Attach the event listener to the button
+            document.getElementById('ConvertButton').addEventListener('click', convert);
+        });
+    </script>
 </body>
+</html>
