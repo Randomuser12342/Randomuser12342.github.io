@@ -14,15 +14,16 @@
             let length = text.length;
             document.getElementById('Result').innerHTML = '<strong>' + length + '</strong>';
         }
-        document.getElementById('ConvertButton').addEventListener('convert', buttonClicked);
+        // Corrected event listener
+        document.getElementById('ConvertButton').addEventListener('click', convert);
     </script>
     <div class="navbar">
         <a href="randomuser12342.github.io">Home</a>
         <a href="randomuser12342.github.io/projects">Projects</a>
     </div>
     <h1>LengthOText</h1>
-    <p>Find the length of text instantly!.</p>
+    <p>Find the length of text instantly!</p>
     <input type="text" id="MyText">
-    <input type="button" id="ConvertButton">
+    <input type="button" id="ConvertButton" value="Convert" onclick="convert()">
     <p id="Result">You have not converted yet!</p>
 </body>
