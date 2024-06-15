@@ -30,4 +30,6 @@ body {
     animation: rotating 2s linear infinite;
     /* Vendor-prefixed version for older browsers */
     -webkit-animation: rotating 2s linear infinite;
+    /* Ensure rotation around the element's center */
+    transform-origin: center;
 }
