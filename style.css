@@ -24,12 +24,10 @@ body {
     }
 }
 
-/* Apply the animation to the .rotating class */
-.rotating {
-    /* Standard syntax */
+/* Apply the animation to the <h1> element inside .rotating */
+.rotating h1 {
+    display: inline-block; /* Make the h1 an inline-block element */
     animation: rotating 2s linear infinite;
-    /* Vendor-prefixed version for older browsers */
     -webkit-animation: rotating 2s linear infinite;
-    /* Ensure rotation around the element's center */
-    transform-origin: center;
+    transform-origin: center; /* Ensure rotation around the element's center */
 }
