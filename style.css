@@ -14,15 +14,7 @@ body {
     color: inherit;
 }
 
-@-webkit-keyframes rotating {
-    from{
-        -webkit-transform: rotate(0deg);
-    }
-    to{
-        -webkit-transform: rotate(360deg);
-    }
-}
-
+/* Define the keyframes for the rotating animation */
 @keyframes rotating {
     from {
         transform: rotate(0deg);
@@ -32,11 +24,10 @@ body {
     }
 }
 
+/* Apply the animation to the .rotating class */
 .rotating {
+    /* Standard syntax */
     animation: rotating 2s linear infinite;
-}
-
-
-.rotating {
+    /* Vendor-prefixed version for older browsers */
     -webkit-animation: rotating 2s linear infinite;
 }
