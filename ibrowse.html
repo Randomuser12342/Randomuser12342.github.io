@@ -19,7 +19,8 @@
     <br>
     <p>A simple web browser made using an iframe</p>
     <input type="url" id="URL"></input> <button id="Go">Go</button>
-    <iframe is="x-frame-bypass" data-tf-redirect-target="_self" src="https://www.google.com/search?igu=1" width="100%" height="100%"></iframe>
+    <!-- Added an ID to the iframe and set a specific height -->
+    <iframe is="x-frame-bypass" id="myIframe" data-tf-redirect-target="_self" src="https://www.google.com/search?igu=1" width="100%" height="600px"></iframe>
     <script>
         // Function to change the iframe URL
         function changeIframeUrl(newUrl) {
@@ -29,7 +30,7 @@
 
         function buttonClicked() {
          let targeturl = document.getElementById('URL').value;
-         changeIframeUrl(targeturl)
+         changeIframeUrl(targeturl);
         }
 
         document.getElementById('Go').addEventListener('click', buttonClicked);
