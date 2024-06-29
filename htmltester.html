@@ -85,18 +85,38 @@
 
     <div id="preview">
         <h2>Preview:</h2>
-        <iframe id="previewFrame" sandbox="0" frameborder="0"></iframe>
+        <iframe id="previewFrame" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" frameborder="0"></iframe>
     </div>
 
     <script>
         function updatePreview() {
             var htmlCode = document.getElementById('htmlInput').value;
 
-            // Create a base64 encoded data URL
-            var encodedHtml = "data:text/html;charset=utf-8;base64," + btoa(htmlCode);
+            // Create a complete HTML document with specified CSS and HTML content
+            var iframeContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Preview</title>
+                    <style>
+                        /* Include styles specific to the iframe content */
+                        body {
+                            font-family: 'Lexend', sans-serif;
+                            padding: 20px;
+                        }
+                        /* Additional specific styles can be added here */
+                    </style>
+                </head>
+                <body>
+                    ${htmlCode}
+                </body>
+                </html>
+            `;
 
+            // Set the iframe content
             var previewFrame = document.getElementById('previewFrame');
-            previewFrame.src = encodedHtml;
+            previewFrame.srcdoc = iframeContent;
         }
     </script>
 </body>
